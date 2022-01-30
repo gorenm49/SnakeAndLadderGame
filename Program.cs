@@ -10,6 +10,7 @@ namespace SnakeAndLadder
 
             SnakeAndLadderGame game = new SnakeAndLadderGame();
             game.DiceRoll();
+            game.GamePlay();
         }
         
     }
