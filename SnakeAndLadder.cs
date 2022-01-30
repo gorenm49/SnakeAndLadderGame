@@ -17,21 +17,36 @@ namespace SnakeAndLadder
 
         public void GamePlay()
         {
-            int choice = random.Next(0,3);
-
-            switch (choice)
+            while (this.playerPosition < WIN_PLACE)
             {
-                case NO_PLAY_THE_PLAYER: break;
-                case LADDER_MOVE:
-                    this.playerPosition += DiceRoll();
-                    break;
-                case SNAKE:
-                    this.playerPosition -= DiceRoll();
-                    break;
-                default:
-                    break;
-            }
+                int choice = random.Next(0,3);
+
+                switch (choice)
+                {
+                    case NO_PLAY_THE_PLAYER: break;
+                    case LADDER_MOVE:
+                        if (this.playerPosition + DiceRoll() <= 100)
+                        {
+                            this.playerPosition += DiceRoll();
+                        }
+                        break;
+                        
+                    case SNAKE:
+                        if (this.playerPosition - DiceRoll() >= 0)
+                        {
+                            this.playerPosition -= DiceRoll();
+                        }
+                        else
+                        {
+                            this.playerPosition = 0;
+                        }
+                        break;
+                    
+                    default:
+                        break;
+                }
             
-        }
-    }    
+            }
+        }    
+    }
 }
