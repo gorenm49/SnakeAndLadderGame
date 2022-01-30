@@ -6,12 +6,13 @@ namespace SnakeAndLadder
     {
         const int NO_PLAY_THE_PLAYER = 0, LADDER_MOVE = 1, SNAKE = 2, WIN_PLACE = 100;
 
-        int playerPosition = 0; 
+        int playerPosition = 0, counter =0; 
 
         Random random = new Random();
 
         public int DiceRoll()
         {
+            counter++;
             return random.Next(1,7);
         }
 
@@ -45,8 +46,12 @@ namespace SnakeAndLadder
                     default:
                         break;
                 }
+
+                Console.WriteLine("Player Position is:  "+this.playerPosition);
             
             }
+
+            Console.WriteLine("Dice rolled Count is: "+counter);
         }    
     }
 }
