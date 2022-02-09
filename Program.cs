@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SnakeAndLadder
+namespace SnakeAndLadderGame
 {
     public class Program
     {
@@ -8,9 +8,9 @@ namespace SnakeAndLadder
         {
             Console.WriteLine("Welcome to Snake and ladder game");
 
-            SnakeAndLadderGame game = new SnakeAndLadderGame();
+            SnakeAndLadder game = new SnakeAndLadder();
             game.DiceRoll();
-            game.GamePlay();
+            game.TwoPlayer();
         }
         
     }
